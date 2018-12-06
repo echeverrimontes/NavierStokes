@@ -4,6 +4,7 @@ out vec4 fragColor;
 uniform float iTime;
 uniform float iTimeDelta;
 uniform float siz;
+uniform float iVectorFieldDamping;
 uniform vec2 iResolution;
 uniform vec3 iMouse;
 uniform sampler2D iChannel0;
@@ -55,7 +56,7 @@ void main()
 
     float o = 0.0;
     
-	o = texture( iChannel0, uv ).a * 0.95;
+	o = texture( iChannel0, uv ).a * iVectorFieldDamping;
 	fO += o;
 
     if( p.y < 0.00 || p.x < 0.00 || p.x > mul || p.y > mul ) o *= 0.0;

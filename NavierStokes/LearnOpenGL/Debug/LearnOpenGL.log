@@ -1,21 +1,21 @@
 ﻿  main.cpp
-d:\programas\opengl\learnopengl-master\learnopengl\shader.h(65): warning C4101: 'infoLog': unreferenced local variable
-d:\programas\opengl\learnopengl-master\learnopengl\shader.h(64): warning C4101: 'success': unreferenced local variable
-d:\programas\opengl\learnopengl-master\learnopengl\main.cpp(30): warning C4244: 'initializing': conversion from 'time_t' to 'int', possible loss of data
-d:\programas\opengl\learnopengl-master\learnopengl\main.cpp(141): warning C4129: 'V': unrecognized character escape sequence
-d:\programas\opengl\learnopengl-master\learnopengl\main.cpp(141): warning C4129: 'B': unrecognized character escape sequence
-d:\programas\opengl\learnopengl-master\learnopengl\main.cpp(167): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-d:\programas\opengl\learnopengl-master\learnopengl\main.cpp(273): warning C4305: 'initializing': truncation from 'double' to 'float'
-d:\programas\opengl\learnopengl-master\learnopengl\main.cpp(696): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-d:\programas\opengl\learnopengl-master\learnopengl\main.cpp(705): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-d:\programas\opengl\learnopengl-master\learnopengl\main.cpp(748): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-d:\programas\opengl\learnopengl-master\learnopengl\main.cpp(773): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-d:\programas\opengl\learnopengl-master\learnopengl\main.cpp(775): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-d:\programas\opengl\learnopengl-master\learnopengl\main.cpp(777): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-d:\programas\opengl\learnopengl-master\learnopengl\main.cpp(831): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-d:\programas\opengl\learnopengl-master\learnopengl\main.cpp(833): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-d:\programas\opengl\learnopengl-master\learnopengl\main.cpp(859): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-d:\programas\opengl\learnopengl-master\learnopengl\main.cpp(861): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-d:\programas\opengl\learnopengl-master\learnopengl\main.cpp(882): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-d:\programas\opengl\learnopengl-master\learnopengl\main.cpp(917): warning C4244: '=': conversion from 'time_t' to 'int', possible loss of data
-  LearnOpenGL.vcxproj -> D:\Programas\OpenGL\LearnOpenGL-master\Debug\LearnOpenGL.exe
+d:\programas\opengl\navierstokes\learnopengl\shader.h(65): warning C4101: 'infoLog': unreferenced local variable
+d:\programas\opengl\navierstokes\learnopengl\shader.h(64): warning C4101: 'success': unreferenced local variable
+d:\programas\opengl\navierstokes\learnopengl\main.cpp(30): warning C4244: 'initializing': conversion from 'time_t' to 'int', possible loss of data
+d:\programas\opengl\navierstokes\learnopengl\main.cpp(141): warning C4129: 'V': unrecognized character escape sequence
+d:\programas\opengl\navierstokes\learnopengl\main.cpp(141): warning C4129: 'B': unrecognized character escape sequence
+d:\programas\opengl\navierstokes\learnopengl\main.cpp(167): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+d:\programas\opengl\navierstokes\learnopengl\main.cpp(273): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\programas\opengl\navierstokes\learnopengl\main.cpp(698): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\programas\opengl\navierstokes\learnopengl\main.cpp(707): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\programas\opengl\navierstokes\learnopengl\main.cpp(752): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\programas\opengl\navierstokes\learnopengl\main.cpp(777): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\programas\opengl\navierstokes\learnopengl\main.cpp(779): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\programas\opengl\navierstokes\learnopengl\main.cpp(781): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\programas\opengl\navierstokes\learnopengl\main.cpp(835): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\programas\opengl\navierstokes\learnopengl\main.cpp(837): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\programas\opengl\navierstokes\learnopengl\main.cpp(863): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\programas\opengl\navierstokes\learnopengl\main.cpp(865): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\programas\opengl\navierstokes\learnopengl\main.cpp(886): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\programas\opengl\navierstokes\learnopengl\main.cpp(921): warning C4244: '=': conversion from 'time_t' to 'int', possible loss of data
+  LearnOpenGL.vcxproj -> D:\Programas\OpenGL\NavierStokes\Debug\LearnOpenGL.exe

@@ -22,7 +22,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <Windows.h>
+#include <thread>
 
 using namespace cv;
 
@@ -70,7 +70,6 @@ std::string quality;
 static void cursorPositionCallback( GLFWwindow *window, double xPos, double yPos );
 // Our mouse button press.
 static void mouseButtonCallback( GLFWwindow *window, int button, int action, int mods );
-
 
 int main() 
 {
@@ -547,6 +546,7 @@ int main()
 	static float diffusionRate = 0.25f;
 	static float sizeOfPainter = 0.05f;
 	static float damping = 1.0f;
+	static float vectorFieldDamping = 0.98f;
 	static float vorticity = 12.0f;
 	static float inputForce = 0.07f;
 	static float velocityMultiplier = 3.0f;
@@ -554,7 +554,6 @@ int main()
 	static int negativeColours = 1;
 	static int reloadTexture = 0;
 	static int blackColour = 0;
-	int videoFrameCounter = 0;
 
 	// Render Loop.
 	while( !glfwWindowShouldClose( window ) )
@@ -562,7 +561,7 @@ int main()
 
 		glfwGetFramebufferSize( window, &WIDTH, &HEIGHT );
 		
-		// We set our video.
+		// We set our video from our void function declared before main, so that we can multi-thread it.
 		try
 		{
 
@@ -591,6 +590,22 @@ int main()
 			
 		}
 
+		if( frame.empty() )
+		{
+
+			std::cout << "No luck with the VideoCapture..." << std::endl;
+
+		}
+
+		else
+		{
+			
+			image = cvMat2TexInput( frame );
+
+		}
+		
+
+
 		if( image )
 		{
 		
@@ -604,6 +619,7 @@ int main()
 			std::cout << "Failed to load video texture." << std::endl;
 
 		}
+		
 
 		// Input.
 		processInput( window );
@@ -614,7 +630,7 @@ int main()
 		ImGui::NewFrame();
 		
 		ImGui::Begin( "Graphical User Interface" );   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
-		ImGui::Text( "Pick your weapons!" );    
+		ImGui::Text( std::to_string( FPS ).c_str() );
 		ImGui::SliderFloat( "Size of Mouse Painter", &sizeOfPainter, 0.0f, 1.0f );  // Edit 1 float using a slider from 0.0f to 1.0f
 		if( ImGui::Button( "Reload Texture" ) )
 
@@ -641,7 +657,8 @@ int main()
 		ImGui::SliderFloat( "Input Force", &inputForce, 0.05f, 0.1f );
 		ImGui::SliderFloat( "Velocity Multiplier", &velocityMultiplier, 0.0f, 20.0f );
 		ImGui::SliderFloat( "Vorticity Confinement", &vorticity, 0.0f, 100.0f );
-		ImGui::SliderFloat( "Damping factor", &damping, 0.0f, 1.0f );
+		ImGui::SliderFloat( "Damping Factor", &damping, 0.0f, 1.0f );
+		ImGui::SliderFloat( "Vector Field Damping Factor", &vectorFieldDamping, 0.0f, 1.0f );
 		if( ImGui::Button( "Left-Click Random Colours" ) )
 
 			if( randomColours == 0 )
@@ -705,6 +722,8 @@ int main()
 		BufferA.setVec2( "iResolution", WIDTH, HEIGHT );
 		// Input the size of the Mouse Painter.
 		BufferA.setFloat( "siz", sizeOfPainter );
+		// Input the damping factor.
+		BufferA.setFloat( "iVectorFieldDamping", vectorFieldDamping );
 
 
 		// Input iMouse.
@@ -911,7 +930,6 @@ int main()
 
 		even = !even;
 
-		videoFrameCounter++;
 		frameCount++;
 		frames++;
 		finalTime = time( NULL );
@@ -920,7 +938,7 @@ int main()
 		
 			FPS = frameCount / ( finalTime - initialTime );
 			std::stringstream title;
-			title << "Navier-Stokes Simulation, FPS : " << videoFrameCounter;
+			title << "Navier-Stokes Simulation, FPS : " << FPS;
 			frameCount = 0;
 			initialTime = finalTime;
 

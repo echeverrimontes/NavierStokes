@@ -74,6 +74,10 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>C:\Users\Paula\Downloads\glad\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>D:\Downloads\glfw-3.2.1\include;D:\Downloads\glm-0.9.9.1\glm-0.9.9.1\glm;D:\Downloads\glad-master\build\include;D:\Programas\GUI\imgui;D:\Programas\GUI\imgui\examples;D:\Downloads\opencv-4.0.0\Compile;D:\Downloads\opencv-4.0.0\modules\core\include;D:\Downloads\opencv-4.0.0\modules\videoio\include;D:\Downloads\opencv-4.0.0\modules\imgproc\include;D:\Downloads\opencv-4.0.0\modules\highgui\include;D:\Downloads\opencv-4.0.0\modules\imgcodecs\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Downloads\glfw-3.2.1\build\src\Debug;D:\Downloads\glm-0.9.9.1\glm-0.9.9.1\build\glm\Debug;D:\Downloads\opencv-4.0.0\Compile\lib\Release;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -100,11 +104,12 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <ConformanceMode>true</ConformanceMode>
+      <ConformanceMode>false</ConformanceMode>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;opencv_core400.lib;opencv_imgproc400.lib;opencv_highgui400.lib;opencv_ml400.lib;opencv_video400.lib;opencv_features2d400.lib;opencv_calib3d400.lib;opencv_objdetect400.lib;opencv_flann400.lib;opencv_videoio400.lib;opencv_imgcodecs400.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
