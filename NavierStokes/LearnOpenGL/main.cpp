@@ -71,6 +71,32 @@ static void cursorPositionCallback( GLFWwindow *window, double xPos, double yPos
 // Our mouse button press.
 static void mouseButtonCallback( GLFWwindow *window, int button, int action, int mods );
 
+/*
+void multi( VideoCapture cap, Mat& frame )
+{
+
+	while( cap.isOpened() )
+	{
+
+		try
+		{
+
+			cap >> frame;
+
+		}
+
+		catch( Exception& e )
+		{
+
+			std::cout << e.msg << std::endl;
+
+		}
+
+		}
+
+}
+*/
+
 int main() 
 {
 
@@ -590,21 +616,10 @@ int main()
 			
 		}
 
-		if( frame.empty() )
-		{
-
-			std::cout << "No luck with the VideoCapture..." << std::endl;
-
-		}
-
-		else
-		{
-			
-			image = cvMat2TexInput( frame );
-
-		}
-		
-
+		/*
+		std::thread t1( multi, cap, std::ref( frame ) );
+		t1.join();
+		*/
 
 		if( image )
 		{
